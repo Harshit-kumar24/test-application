@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+ stage('Checkout') {
+            steps {
+                // Checkout the code from the repository
+                git url: 'https://github.com/Harshit-kumar24/test-application.git', branch: 'main'
+            }
+        }
         stage('Build') {
             steps {
                 // Clean and compile the project
