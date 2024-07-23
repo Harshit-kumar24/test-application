@@ -48,7 +48,15 @@ pipeline {
             // Archive test results and build artifacts
             junit '**/target/surefire-reports/*.xml'
             archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
-       
+        }
+
+        success {
+            echo 'Build was successful!'
+        }
+
+        failure {
+            echo 'Build failed!'
+        }
+    }
 }
-	}
 
